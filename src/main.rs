@@ -22,8 +22,8 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         let cors = Cors::default()
             .allowed_origin("http://localhost:3000")
-            .allowed_origin("http://localhost:3000/")
-            .allowed_methods(vec!["GET", "POST"])
+            .allowed_origin("https://derrick-actix-web.onrender.com")
+            .allowed_methods(vec!["GET", "POST", "PATCH", "DELETE"])
             .allowed_headers(vec![header::CONTENT_TYPE, header::AUTHORIZATION, header::ACCEPT])
             .supports_credentials();
         App::new()
